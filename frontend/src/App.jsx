@@ -1,13 +1,18 @@
-import Navbar from "./frontend/Navbar"
-import Informations from "./frontend/ExpenseInformations"
-import ExpenseCategories from "./frontend/ExpenseCategories"
+import Navbar from "./components/Navbar"
+import Informations from "./components/ExpenseInformations"
+import ExpenseCategories from "./components/ExpenseCategories"
+import Footer from "./components/Footer"
+
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Informations />
-      <ExpenseCategories />
-    </>
+      <div className="flex-grow">
+        <Informations />
+        <ExpenseCategories />
+      </div>
+      <Footer />
+    </div>
   )
 }
 

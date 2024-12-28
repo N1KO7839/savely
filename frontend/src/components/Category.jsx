@@ -1,6 +1,6 @@
 function Category({ category, amount }) {
   return (
-    <div className="flex flex-row items-center justify-between w-11/12 p-4 m-2 bg-[#2a374a] rounded-lg">
+    <div className="flex flex-col mobileL:flex-row items-center justify-between w-11/12 p-4 m-2 bg-[#2a374a] rounded-lg">
       <div className="flex items-start text-center gap-2">
         <img
           className="w-5"
