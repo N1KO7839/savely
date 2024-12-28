@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="flex flex-col sm:flex-row items-center justify-between w-full h-20 py-3 sm:py-0 px-12 bg-[#18202f]">
+        <footer className="flex flex-col sm:flex-row items-center justify-between w-full h-20 py-3 sm:py-0 px-12 mt-6 bg-[#18202f]">
             <p className="font-SignikaNegative text-sm sm:text-base text-[#8b8d91]">
                 © 2025 Savely. All rights reserved.
             </p>

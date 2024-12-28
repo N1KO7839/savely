@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import Informations from "./components/ExpenseInformations"
 import ExpenseCategories from "./components/ExpenseCategories"
+import RecentTransactions from "./components/RecentTransactions"
 import Footer from "./components/Footer"
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div className="flex-grow">
         <Informations />
         <ExpenseCategories />
+        <RecentTransactions />
       </div>
       <Footer />
     </div>
