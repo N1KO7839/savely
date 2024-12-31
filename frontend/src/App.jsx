@@ -1,23 +1,17 @@
-import Navbar from "./components/Navbar"
-import Informations from "./components/ExpenseInformations"
-import MonthlyChart from "./components/MonthlyChart"
-import ExpenseCategories from "./components/ExpenseCategories"
-import RecentTransactions from "./components/RecentTransactions"
-import Footer from "./components/Footer"
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Login from "./Login";
+import Singup from "./Singup";
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div className="flex-grow">
-        <Informations />
-        <MonthlyChart />
-        <ExpenseCategories />
-        <RecentTransactions />
-      </div>
-      <Footer />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/singup" element={<Singup />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -32,7 +32,7 @@ const days = [
     { day: 28, amount: 69 },
     { day: 29, amount: 574 },
     { day: 30, amount: 331 },
-    { day: 31, amount: 317 }
+    { day: 31, amount: 0 },
 ];
 
 

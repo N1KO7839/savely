@@ -11,7 +11,7 @@ function Transaction({ transaction, amount }) {
         </p>
       </div>
     </div>
-    <hr className="w-11/12 border-t-2 border-white/25 my-2" />
+    <hr className="w-11/12 border-t-2 border-white/10 my-2" />
     </>
   );
 }
