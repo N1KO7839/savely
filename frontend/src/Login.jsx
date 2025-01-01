@@ -38,8 +38,8 @@ const Login = () => {
                     </div>
                 </div>
                 <div className='flex items-center gap-2 absolute bottom-0 m-4'>
-                    <p className='font-SignikaNegative font-bold text-xs mobileL:text-sm tablet:text-lg text-white'>New here? Create your account</p>
-                    <a className='font-SignikaNegative font-bold text-xs mobileL:text-sm tablet:text-lg text-[#5c90f2]' href="/singup">here</a>
+                    <p className='font-SignikaNegative font-bold text-xs mobileL:text-sm tablet:text-base text-white'>New here? Create your account</p>
+                    <a className='font-SignikaNegative font-bold text-xs mobileL:text-sm tablet:text-base text-[#5c90f2]' href="/singup">here</a>
                 </div>
             </div >
         </div>
