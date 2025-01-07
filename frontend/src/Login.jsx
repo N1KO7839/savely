@@ -13,6 +13,8 @@ const Login = () => {
             setPasswordVisibility(false);
         }
     }
+    // I will add backend later so it will check if user exists in database and if password is correct
+    // If user exists and password is correct it will send email to verify user  
 
     return (
         <div className="flex flex-col min-h-screen justify-center items-center bg-[#111827] h-screen">

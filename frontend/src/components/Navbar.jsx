@@ -1,7 +1,7 @@
 import Button from "./Button";
 import HamburgerMenu from "./HamburgerList";
 
-function Navbar() {
+function Navbar({ setShowed }) {
   return (
     <div
       id="navbar"
@@ -12,11 +12,11 @@ function Navbar() {
         <h1 className="font-Overpass font-bold text-xl">Savely</h1>
       </div>
       <div id="buttons" className="hidden sm:flex gap-6 mr-6 m-3.5">
-        <Button text="+ Add Expense" onClick={() => alert("ASD")} />
+        <Button text="+ Add Expense" onClick={() => setShowed(true)} />
         <Button text="Login/Logout" onClick={() => alert("ASD")} />
       </div>
       <div className="sm:hidden m-3.5">
-        <HamburgerMenu />
+        <HamburgerMenu setShowed={setShowed}/>
       </div>
     </div>
   );

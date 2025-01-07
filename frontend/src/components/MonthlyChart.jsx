@@ -54,7 +54,7 @@ function MonthlyChart() {
                         </defs>
                         <XAxis dataKey="day" stroke="#ccc" />
                         <YAxis stroke="#ccc" />
-                        <CartesianGrid strokeDasharray="3 3" />
+                        <CartesianGrid stroke='#fff' opacity={0.2} strokeDasharray="6 6" />
                         <Tooltip />
                         <Area type="monotone" dataKey="amount" stroke="#8884d8" fillOpacity={1} fill="url(#colorAmount)" />
                     </AreaChart>

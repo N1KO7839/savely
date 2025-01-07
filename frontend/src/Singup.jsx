@@ -32,6 +32,7 @@ const Singup = () => {
         alert("Passwords don't match");
       } else {
         alert("Passwords match");
+        // Ill do backend later so it will add user to database and this alert will be deleted or replaced with redirect to login page
       }
     }
 
