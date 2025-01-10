@@ -28,7 +28,7 @@ const Login = () => {
                     <h1 className="text-white font-Overpass font-bold text-xl pt-1">Savely</h1>
                 </div>
                 <h1 className="text-white font-Overpass font-bold text-5xl">Login</h1>
-                <div className="flex flex-col gap-4 w-10/12 pt-16">
+                <div className="flex flex-col gap-4 w-10/12 pt-4">
                     <input className="text-white text-center w-full bg-white/0 border border-[#777F8B] py-1.5 rounded-xl" type="email" name="userEmail" id="userEmail" placeholder="Enter your email" />
                     <div className="relative w-full">
                         <input className="text-white text-center w-full bg-white/0 border border-[#777F8B] py-1.5 rounded-xl" type="password" name="userPassword" id="userPassword" placeholder="Enter your password" />
