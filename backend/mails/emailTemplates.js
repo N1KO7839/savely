@@ -4,46 +4,52 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verify Your Email</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #121212;
             margin: 0;
             padding: 20px;
+            color: #e0e0e0;
         }
         .container {
-            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e1e1e;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             margin: 0 auto;
         }
+        img {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+        h1, h2, p {
+            margin: 0 0 15px;
+        }
         h1 {
-            color: #333333;
+            color: #bb86fc;
+        }
+        h2 {
+            color: #03dac6;
+            font-size: 40px;
         }
         p {
-            color: #666666;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #ffffff;
-            background-color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #0056b3;
+            color: #e0e0e0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Verify your email address</h1>
-        <p>Click the link below to verify your email address</p>
-        <h2>Your verification code: {verificationCode}</h2>
+        <h1>Hi there,</h1>
+        <p>This is your verification code:</p>
+        <h2><b>{verificationCode}</b></h2>
+        <p>Enter it on the site to successfully register.</p>
+        <p>All the best, Savely</p>
     </div>
 </body>
 </html>
