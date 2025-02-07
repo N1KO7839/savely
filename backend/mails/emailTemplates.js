@@ -253,3 +253,78 @@ export const FORGOT_PASSWORD_EMAIL_TEMPLATE = `
 </body>
 </html>
 `
+export const RESET_PASSWORD_SUCCESS = `
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; box-sizing: border-box;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset Successful</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 64px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #6200ea;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 12px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.imgur.com/KavAbpT.png" alt="logo" />
+            <h1>Password Reset Successful</h1>
+        </div>
+        <div class="content">
+            <p>Dear {userName},</p>
+            <p>Your password has been successfully reset. You can now log in with your new password.</p>
+            <p>If you did not request this change, please contact our support team immediately.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {currentYear} Savely. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
+`

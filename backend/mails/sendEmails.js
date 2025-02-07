@@ -1,5 +1,5 @@
 import {mailtrapClient, sender} from "./mailtrap.js";
-import { VERIFICATION_EMAIL_TEMPLATE, WELCOME_EMAIL_TEMPLATE, FORGOT_PASSWORD_EMAIL_TEMPLATE} from "./emailTemplates.js";
+import { VERIFICATION_EMAIL_TEMPLATE, WELCOME_EMAIL_TEMPLATE, FORGOT_PASSWORD_EMAIL_TEMPLATE, RESET_PASSWORD_SUCCESS} from "./emailTemplates.js";
 export async function sendVerificationEmail(email, verificationToken){
     const recipient = [{email}];
     let name = email.split("@")[0];
@@ -52,7 +52,26 @@ export const sendPasswordResetEmail = async(email, resetLink) => {
         console.log("Reset password email sent successfully");
     }
     catch(error){
-        console.error("Error sending r2eset password email:", error.message);
+        console.error("Error sending reset password email:", error.message);
     }
 
+}
+
+export const sendResetSuccessEmail = async(email) => {
+    const recipient = [{email}];
+    let name = email.split("@")[0];
+    let currentYear = new Date().getFullYear();
+    try{
+        const response = await mailtrapClient.send({
+            from: sender,
+            to: recipient,
+            subject: "Password reseted successfully",
+            html: RESET_PASSWORD_SUCCESS.replace("{userName}", name).replace("{currentYear}", currentYear),
+            category: "Reset Password Success",
+        });
+        console.log("Password reseted successfully");
+    }
+    catch(error){
+        console.error("Error sending success reset password email:", error.message);
+    }
 }
