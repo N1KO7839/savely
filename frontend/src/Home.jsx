@@ -16,7 +16,7 @@ function Home() {
       <div className="flex-grow">
         <Informations />
         <MonthlyChart />
-        {showed && <AddExpense hideExpenseForm={() => setShowed(false)} />} {/* Conditionally render AddExpense */}
+        {showed && <AddExpense hideExpenseForm={() => setShowed(false)} />}
         <ExpenseCategories />
         <RecentTransactions />
       </div>

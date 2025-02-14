@@ -1,6 +1,6 @@
 'use client';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+//it will be replaced with data from the database
 const days = [
     { day: 1, amount: 535 },
     { day: 2, amount: 532 },
@@ -43,9 +43,11 @@ function MonthlyChart() {
                 <h1 className="font-Overpass font-bold text-xl text-white/50 ">Expense Trends</h1>
                 <p className="font-SignikaNegative font-normal text-base text-[#565c65]">Current Month</p>
             </div>
+            {/* Chart container */}
             <div className="flex justify-center w-full">
                 <ResponsiveContainer width="95%" height={400}>
                     <AreaChart data={days}>
+                        {/* Gradient definition for the area fill */}
                         <defs>
                             <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -54,8 +56,10 @@ function MonthlyChart() {
                         </defs>
                         <XAxis dataKey="day" stroke="#ccc" />
                         <YAxis stroke="#ccc" />
+                        {/* Grid lines configuration */}
                         <CartesianGrid stroke='#fff' opacity={0.2} strokeDasharray="6 6" />
                         <Tooltip />
+                        {/* Area chart configuration */}
                         <Area type="monotone" dataKey="amount" stroke="#8884d8" fillOpacity={1} fill="url(#colorAmount)" />
                     </AreaChart>
                 </ResponsiveContainer>
