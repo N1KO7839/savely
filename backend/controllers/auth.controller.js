@@ -3,7 +3,6 @@ import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.js
 import { sendPasswordResetEmail } from "../mails/sendEmails.js";
 import { sendVerificationEmail, sendWelcomeEmail, sendResetSuccessEmail} from "../mails/sendEmails.js";
 import bcryptjs from "bcryptjs";
-import crypto from "crypto";
 
 export const signup = async (req, res) => {
     const { email, password } = req.body;

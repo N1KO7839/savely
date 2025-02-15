@@ -14,14 +14,16 @@ function VerifyCode() {
                 newVerificationCode[index + 1] = value[0];
                 setVerificationCode(newVerificationCode);
             }
+            //switching focus to next input field
             if (value !== "" && index < verificationCode.length - 1) {
             document.getElementById(`verifyCode${index + 1}`).focus();
             }
+            //switching focus to previous input field
             if (value === "" && index > 0) {
             document.getElementById(`verifyCode${index-1}`).focus();
             }
         };
-
+        //pasting verification code
         const handlePaste = (e) => {
             if (!e.clipboardData) {
             console.error("Your clipboard is not accessible");
@@ -53,13 +55,12 @@ function VerifyCode() {
                 <p className="text-white/50 font-SignikaNegative font-medium text-xs mobileL:text-sm lg:text-lg w-10/12 text-center pb-5">We have sent a verification code to your email. Please enter the code below to verify your account.</p>
                 <div className="flex flex-col gap-5 w-10/12 pt-4">
                 <label htmlFor="verification code" className="flex items-center justify-center gap-4">
-                    {/* used type tel to make user unable to set more than 2 digits in one input */}
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" autoFocus maxLength={1} value={verificationCode[0]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 0)} type="number" name="verifyCode0" id="verifyCode0" />
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[1]} onChange={(e) => handleInputChange(e, 1)} type="number" name="verifyCode1" id="verifyCode1"/>
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[2]} onChange={(e) => handleInputChange(e, 2)} type="number" name="verifyCode2" id="verifyCode2"/>
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[3]} onChange={(e) => handleInputChange(e, 3)} type="number" name="verifyCode3" id="verifyCode3"/>
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[4]} onChange={(e) => handleInputChange(e, 4)} type="number" name="verifyCode4" id="verifyCode4"/>
-                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[5]} onChange={(e) => handleInputChange(e, 5)} type="number" name="verifyCode5" id="verifyCode5"/>
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" autoFocus maxLength={1} value={verificationCode[0]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 0)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode0" id="verifyCode0" />
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[1]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 1)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode1" id="verifyCode1"/>
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[2]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 2)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode2" id="verifyCode2"/>
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[3]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 3)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode3" id="verifyCode3"/>
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[4]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 4)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode4" id="verifyCode4"/>
+                    <input className="text-white text-xl text-center w-1/6 bg-white/0 border border-[#777F8B] py-4 rounded-xl" maxLength={1} value={verificationCode[5]} onPaste={(e) => handlePaste(e)} onChange={(e) => handleInputChange(e, 5)} onKeyDown={(e) => ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()} type="number" name="verifyCode5" id="verifyCode5"/>
                     </label>
                     <p className="hidden text-red-600/90 text-center pb-2" id='codeLengthError'>Your pasted code should be 6 characters long</p>
                     <div className='flex items-center justify-center gap-4'>
