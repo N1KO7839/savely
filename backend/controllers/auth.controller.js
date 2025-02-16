@@ -102,7 +102,13 @@ export const login = async (req, res) => {
         if(!isPasswordCorrect){
             return res.status(400).json({success: false, message: "Invalid credentials"});   
         }
+        if(user.loggedIn){
+            return res.status(400).json({success: false, message: "User already logged in"});
+        }
         generateTokenAndSetCookie(res, user._id);
+        
+        user.loggedIn = true;
+        await user.save();
 
         res.status(200).json({
             success: true,

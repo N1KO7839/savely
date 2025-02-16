@@ -20,6 +20,7 @@ const { signup, error} = useAuthStore();
   const changePasswordVisibility = () => setPasswordVisibility(!passwordVisibility);
   const changeConfirmPasswordVisibility = () => setConfirmPasswordVisibility(!confirmPasswordVisibility);
 
+  
   const validatePassword = async (e) => {
     e.preventDefault();
     const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d\s])[A-Za-z\d\S]{8,}$/;
