@@ -12,28 +12,27 @@ export const signup = async (req, res) => {
         if (!email || !password) {
             return res.status(400).json({ success: false, message: "All fields are required" });
         }
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d\s])[A-Za-z\d\S]{8,}$/;
+        if(!regex.test(password)){
+            return res.status(400).json({ success: false, message: "Password should be at least 8 characters and contain at least one letter, one number and one special character"});
+        }
 
-        // Check if the user already exists
         const userAlreadyExists = await User.findOne({ email });
         if (userAlreadyExists) {
             return res.status(400).json({ success: false, message: "User already exists" });
         }
 
-        // Hash the password
         const hashedPassword = await bcryptjs.hash(password, 10);
 
-        // Generate a verification token
         const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
 
-        // Create the new user
         const user = new User({
             email,
             password: hashedPassword,
             verificationToken,
-            verificationTokenExpiresAt: Date.now() +    24 * 60 * 60 * 1000, // Expires in 24 hours
+            verificationTokenExpiresAt: Date.now() +    24 * 60 * 60 * 1000, // 24 hours
         });
 
-        // Save the user in the database
         await user.save();
         
         // Send JWT token and set it in a cookie
@@ -102,12 +101,10 @@ export const login = async (req, res) => {
         if(!isPasswordCorrect){
             return res.status(400).json({success: false, message: "Invalid credentials"});   
         }
-        if(user.loggedIn){
-            return res.status(400).json({success: false, message: "User already logged in"});
-        }
         generateTokenAndSetCookie(res, user._id);
         
         user.loggedIn = true;
+        
         await user.save();
 
         res.status(200).json({
@@ -127,6 +124,8 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
     res.clearCookie("token");
+    user.loggedIn = false;
+    await user.save();
     res.status(200).json({success: true, message: "Logged out successfully"});
 }
 

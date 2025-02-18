@@ -12,12 +12,10 @@ function Navbar({ setShowed }) {
         <h1 className="font-Overpass font-bold text-xl">Savely</h1>
       </div>
       <div id="buttons" className="hidden sm:flex gap-6 mr-6 m-3.5">
-        {/* Buttons only visible on small screens and above */}
         <Button text="+ Add Expense" onClick={() => setShowed(true)} />
-        <Button text="Login/Logout" onClick={() => alert("ASD")} />
+        <Button text="Logout" onClick={() => alert("ASD")} />
       </div>
       <div className="sm:hidden m-3.5">
-        {/* Hamburger menu for mobile view */}
         <HamburgerMenu setShowed={setShowed}/>
       </div>
     </div>
